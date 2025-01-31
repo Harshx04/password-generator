@@ -1,0 +1,34 @@
+<html>
+    <head></head>
+    <body>
+        <div class="container">
+            <div class="box">
+                <h2>sword generator</h2>
+                <div class="input">
+                    <input type="text" id="name" placeholder="Enter your name">
+                    <input type="text" id="lastname" placeholder="enter last anme">
+                    <input type="number" id="number" placeholder="Enter no">
+                </div>
+                <input type="text" id="paswword"> <br>
+                <button onclick="pass()">Generate password</button>
+                
+            </div>
+        </div>
+        <script>
+            const password =document.getElementById("paswword");
+            function pass(){
+                const name=document.getElementById("name").value;
+                const lastname=document.getElementById("lastname").value;
+                const number=document.getElementById("number").value;
+                const special="@/&$";
+                let pass="";
+                pass+=name[Math.floor(Math.random()*name.length)];
+                pass+=lastname[Math.floor(Math.random()*lastname.length)];
+                pass+=number[Math.floor(Math.random()*number.length)];
+                pass+=special[Math.floor(Math.random()*special.length)];
+                password.value=pass;
+            }
+            
+        </script>
+    </body>
+</html>
